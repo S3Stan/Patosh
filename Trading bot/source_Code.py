@@ -25,3 +25,25 @@ def return_api_key():
 
 
 
+# Specify the API endpoint URL
+# currencies = ['EUR', 'AUD', 'GBP', 'CNY', 'NZD']
+# format = 'json'
+
+
+# # Set endpoint and your access key
+# endpoint = str('live')
+# access_key =  source_Code.return_api_key()  # Replace 'API_KEY' with your actual access key
+# base_currency = str('EUR')
+# trade_currency_list = ['USD', 'AUD']
+
+
+def get_live_price_update(single_base_pair, optional_param='currency_pair_list'):
+    endpoint = str('live')
+    access_key = return_api_key()
+    data_url = f'http://api.currencylayer.com/{endpoint}?access_key={access_key}&source={single_base_pair}'#&currencies={trade_currency_list}'#&format=1'
+    
+    return data_url # return to notebook frontend.
+    
+
+# url = f'http://api.currencylayer.com/{endpoint}?access_key={access_key}&source={base_currency}'#&currencies={trade_currency_list}'#&format=1'
+# url1 = f'https://api.exchangeratesapi.io/v1/{endpoint}?access_key={access_key}'
