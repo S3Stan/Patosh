@@ -1,5 +1,5 @@
 # Imports
-
+from datetime import datetime
 
 
 # Data input and API connections:
@@ -40,9 +40,8 @@ def get_historical_price_update(day_date):
 
 # 
 def get_time_series_data(currency, start_date, end_date):
-    endpoint = str('timeframe')
-    start_date = "2023-11-15"
-    data_pack = f'http://api.currencylayer.com/{endpoint}?access_key={return_api_access_key()}&source={currency}&start_date={start_date}&end_date={start_date}'#start_date={start_date}&end_date={end_date}'
+    endpoint = str('timeframe') 
+    data_pack = f'http://api.currencylayer.com/{endpoint}?access_key={return_api_access_key()}&source={currency}&start_date={start_date}&end_date={end_date}'#start_date={start_date}&end_date={end_date}'
     #print(data_pack)
     
     return data_pack # return data packet to the front end 
