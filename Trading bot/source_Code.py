@@ -6,7 +6,6 @@ from datetime import datetime
 
 ## 1 - Latest rate endpoint
 API_KEY = '3b77809c36c4efa417e527324a9ec241'
-
 latest_rates_endpoint = 'https://api.currencylayer.com/live'
 
 ## 2 - Historical rates
@@ -41,7 +40,7 @@ def get_historical_price_update(day_date):
 # 
 def get_time_series_data(currency, start_date, end_date):
     endpoint = str('timeframe') 
-    data_pack = f'http://api.currencylayer.com/{endpoint}?access_key={return_api_access_key()}&source={currency}&start_date={start_date}&end_date={end_date}'#start_date={start_date}&end_date={end_date}'
+    data_pack = f'https://api.currencylayer.com/{endpoint}?access_key={return_api_access_key()}&currencies={currency}&start_date={start_date}&end_date={end_date}'#start_date={start_date}&end_date={end_date}'
     #print(data_pack)
     
     return data_pack # return data packet to the front end 
@@ -49,8 +48,16 @@ def get_time_series_data(currency, start_date, end_date):
 
 
 
-# https://api.currencylayer.com/historical?date=YYYY-MM-DD
-# https://api.currencylayer.com/timeframe?start_date=2015-01-01&end_date=2015-05-01
+# https://api.currencylayer.com/historical?date=YYYY-MM-DD   &start_date=YYYY-MM-DD&end_date=YYYY-MM-DD]"
+# https://api.currencylayer.com/timeframe?start_date=2015-01-01&end_date=2015-05-0
 
+
+# https://api.currencylayer.com/timeframe
+#     ? access_key = 3b77809c36c4efa417e527324a9ec241
+#     & currencies = USD,GBP,EUR
+#     & start_date = 2010-03-01
+#     & end_date = 2010-04-01
+    
+    
 # url = f'http://api.currencylayer.com/{endpoint}?access_key={access_key}&source={base_currency}'#&currencies={trade_currency_list}'#&format=1'
 # url1 = f'https://api.exchangeratesapi.io/v1/{endpoint}?access_key={access_key}'
